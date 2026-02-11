@@ -1,0 +1,11 @@
+{
+	"include": ["tests/**/*"],
+	"exclude": ["src/**/__tests__/*"],
+	"compilerOptions": {
+		"module": "nodenext",
+		"moduleResolution": "nodenext",
+		"paths": {
+			"@/*": ["./tests/*"]
+		},
+	},
+}
