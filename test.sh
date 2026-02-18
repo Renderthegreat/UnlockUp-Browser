@@ -1,7 +1,7 @@
-npm run dev;
+npm run dev:$1;
 
-# echo 'Building `tests/index.ts`';
+echo 'Running...';
 
-# tsc -p tsconfig.test.json;
-
-# node tests;
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true;
+export PUPPETEER_EXECUTABLE_PATH=`which chromium`;
+node dist/server/index.js;

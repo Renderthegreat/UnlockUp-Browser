@@ -607,7 +607,7 @@
           let a = !1;
           chrome.webRequest.onCompleted.addListener(
             async (e) => {
-              console.log(h.default, (0, b.isCanvasNewLaunch)(e.url));
+              // console.log(h.default, (0, b.isCanvasNewLaunch)(e.url));
               h.default.launched = false; h.default.preLaunched = false;
               if (
                 !1 === h.default.launched &&

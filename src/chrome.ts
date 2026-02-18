@@ -1,3 +1,5 @@
+// Awaiting removal.
+
 import { EventEmitter, } from 'eventemitter3';
 
 export type Extension = {
@@ -178,10 +180,11 @@ export class Chrome {
 			};
 		},
 		getManifest(): any {
+			console.log(this._.manifest);
 			return this._.manifest;
 		},
 		getURL(path: string) {
-			return `chrome-extension://${this._.id}/${path}`;
+			return `./ldb/${path}`; // TODO: Replace.
 		},
 		reload(): void {
 			console.log('Reloading...');

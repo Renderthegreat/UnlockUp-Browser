@@ -1,45 +1,49 @@
 {
-  "name": "unlockup-browser",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "npx vite",
-    "build": "npx run-p type-check \"build-only {@}\" --",
-    "preview": "npx vite preview",
-    "build-only": "npx vite build",
-    "type-check": "npx vue-tsc --build",
-    "lint": "npx run-s lint:*",
-    "lint:oxlint": "npx oxlint . --fix",
-    "lint:eslint": "npx eslint . --fix --cache"
-  },
-  "dependencies": {
-    "element-plus": "^2.13.2",
-    "eventemitter3": "^5.0.4",
-    "vue": "^3.5.27",
-    "vue-router": "^5.0.1",
-	"jquery": "latest"
-  },
-  "devDependencies": {
-    "@tsconfig/node24": "^24.0.4",
-    "@types/node": "^24.10.9",
-    "@vitejs/plugin-vue": "^6.0.3",
-    "@vue/eslint-config-typescript": "^14.6.0",
-    "@vue/tsconfig": "^0.8.1",
-    "eslint": "^9.39.2",
-    "eslint-plugin-oxlint": "~1.42.0",
-    "eslint-plugin-vue": "~10.7.0",
-    "jiti": "^2.6.1",
-    "npm-run-all2": "^8.0.4",
-    "oxlint": "~1.42.0",
-    "puppeteer": "^24.37.2",
-    "typescript": "~5.9.3",
-    "vite": "^7.3.1",
-    "vite-plugin-vue-devtools": "^8.0.5",
-    "vue-tsc": "^3.2.4",
-	"@types/jquery": "latest"
-  },
-  "engines": {
-    "node": "^20.19.0 || >=22.12.0"
-  }
+	"name": "unlockup-browser",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev:*": "npm run dev:build-client; npm run dev:build-server",
+		"dev:build-client": "npx vite build",
+		"dev:build-server": "tsc -p tsconfig.server.json",
+		"build": "npx run-p type-check \"build-only {@}\" --",
+		"preview": "npx vite preview",
+		"build-only": "npx vite build",
+		"type-check": "npx vue-tsc --build",
+		"lint": "npx run-s lint:*",
+		"lint:oxlint": "npx oxlint . --fix",
+		"lint:eslint": "npx eslint . --fix --cache"
+	},
+	"dependencies": {
+		"concurrently": "^9.2.1",
+		"element-plus": "^2.13.2",
+		"eventemitter3": "^5.0.4",
+		"jquery": "latest",
+		"vue": "^3.5.27",
+		"vue-router": "^5.0.1",
+		"puppeteer": "latest"
+	},
+	"devDependencies": {
+		"@tsconfig/node24": "^24.0.4",
+		"@types/jquery": "latest",
+		"@types/node": "^24.10.9",
+		"@types/ws": "^8.18.1",
+		"@vitejs/plugin-vue": "^6.0.3",
+		"@vue/eslint-config-typescript": "^14.6.0",
+		"@vue/tsconfig": "^0.8.1",
+		"eslint": "^9.39.2",
+		"eslint-plugin-oxlint": "~1.42.0",
+		"eslint-plugin-vue": "~10.7.0",
+		"jiti": "^2.6.1",
+		"npm-run-all2": "^8.0.4",
+		"oxlint": "~1.42.0",
+		"typescript": "~5.9.3",
+		"vite": "^7.3.1",
+		"vite-plugin-vue-devtools": "^8.0.5",
+		"vue-tsc": "^3.2.4"
+	},
+	"engines": {
+		"node": "^20.19.0 || >=22.12.0"
+	}
 }

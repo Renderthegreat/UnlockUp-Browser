@@ -1,0 +1,14 @@
+{
+	"include": [
+		"src/server/**/*",
+	],
+	"compilerOptions": {
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"types": ["node"],
+
+		"target": "esnext",
+
+		"outDir": "./dist/server/",
+	},
+}

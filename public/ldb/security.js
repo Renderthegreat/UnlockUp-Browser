@@ -371,7 +371,7 @@ const security = ((chrome) => {
         i && (i.innerHTML = chrome.i18n.getMessage("loading"));
         let s = document.getElementById("title");
         (s && (s.innerHTML = chrome.i18n.getMessage("popup_title")),
-          chrome.runtime.sendMessage({ action: "getlocale" }, (e) => {
+          chrome.runtime.sendMessage({ action: "getlocale" }, undefined, (e) => {
             if (1 == e.overrideLocale) {
               var n = e.locale;
               fetch(
@@ -427,6 +427,7 @@ const security = ((chrome) => {
           A && "false" != A && (e += `&o=${A}`);
           const n = `${g}/MONServer/chromebook/cbe_launch.do${e}`,
             t = document.getElementById("launch-frame");
+		  console.log(n);
           t && t.setAttribute("src", n);
         } else if (u) {
           window.addEventListener("message", (e) => {
@@ -518,7 +519,5 @@ const security = ((chrome) => {
     (t.nc = void 0));
   t(9982);
 });
-
-console.log(window.parent.poison);
 
 security(window.parent.poison);
